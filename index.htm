@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheems PC</title>
+  <link rel="preload" href="pictures/windowsbackground.png" as="image">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="desktop.css">
+  <link rel="stylesheet" href="windows.css">
+  <!-- Add the favicon link -->
+  <link rel="icon" href="pictures/10269.png" type="image/png">
+  <link rel="shortcut icon" href="pictures/10269.png" type="image/png">
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <img src="pictures/cheems_computer.gif" alt="Loading...">
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent">
+    <!-- Background Container -->
+    <div class="background-container"></div>
+
+    <!-- Blue Bar with Start Button, Start Menu, Tab Bar, Icon Tray -->
+    <div class="bluebar">
+      <div>
+        <div id="startbtn" class="startbtn"></div>
+      </div>
+      <div id="startmenu" class="startmenu hidden">
+        <div class="menutopbar">
+          <img src="pictures/cheemspfp.jpg" alt="Cheems PC" class="profile-pic">
+          <span class="profile-text">Cheems PC</span>
+        </div>
+        <div class="menu">
+          <div class="leftmenu">
+            <button class="systemBtn" onclick="window.open('https://twitter.com/theCheemsToken', '_blank')">
+              <img src="pictures/X.png" alt="Twitter" class="systemBtnIcon">
+              Twitter
+            </button>
+            <button class="systemBtn" onclick="window.open('https://t.me/CHEEMSISGAY', '_blank')">
+              <img src="pictures/telegram2.png" alt="Telegram" class="systemBtnIcon">
+              Telegram
+            </button>
+            <button class="systemBtn" onclick="window.open('https://discord.com/invite/jjMmTkVkcX', '_blank')">
+              <img src="pictures/Discord.png" alt="Discord" class="systemBtnIcon">
+              Discord
+            </button>
+            <button class="systemBtn" onclick="window.open('https://solscan.io/token/3FoUAsGDbvTD6YZ4wVKJgTB76onJUKz7GPEBNiR5b8wc', '_blank')">
+              <img src="pictures/Solscan.png" alt="Solscan" class="systemBtnIcon">
+              Solscan
+            </button>
+          </div>
+          <div class="rightmenu">
+            <button class="systemBtn">
+              <img src="pictures/folder.png" alt="My Documents" class="systemBtnIcon">
+              My Documents
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/recentdoc.png" alt="My Recent Documents" class="systemBtnIcon">
+              My Recent Documents
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/folder_image.png" alt="My Pictures" class="systemBtnIcon">
+              My Pictures
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/folder_music.png" alt="My Music" class="systemBtnIcon">
+              My Music
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/mycomputer.png" alt="My Computer" class="systemBtnIcon">
+              My Computer
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/clipboard.png" alt="Control Panel" class="systemBtnIcon">
+              Control Panel
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/defaultprog.png" alt="Set Program Access and Defaults" class="systemBtnIcon">
+              Set Program Access
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/printerfax.png" alt="Printer and Faxes" class="systemBtnIcon">
+              Printer and Faxes
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/help.png" alt="Help and Support" class="systemBtnIcon">
+              Help and Support
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/search.png" alt="Search" class="systemBtnIcon">
+              Search
+            </button>
+            <button class="systemBtn">
+              <img src="pictures/run.png" alt="Run" class="systemBtnIcon">
+              Run
+            </button>
+          </div>
+        </div>
+        <div class="menubtmbar">
+          <button class="systemBtn">
+            <img src="pictures/logoff.png" alt="Log Off" class="systemBtnIcon">
+            Log Off
+          </button>
+          <button class="systemBtn">
+            <img src="pictures/shutdown.png" alt="Turn Off Computer" class="systemBtnIcon">
+            Turn Off Computer
+          </button>
+        </div>
+      </div>
+      <div class="tabbar" id="tabbar">
+        <!-- Tab items will be dynamically added here -->
+      </div>
+      <div class="icontray">
+        <div class="iconrow">
+          <img src="pictures/green_shield.png" alt="Green Shield">
+          <img src="pictures/internet.png" alt="Internet">
+          <img src="pictures/sound.png" alt="Sound">
+          <img src="pictures/removabledevice.png" alt="Removable Device">
+          <div class="time-display"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Central Icons for additional features -->
+    <div class="central-icons">
+      <a id="roadmapBtn" class="icon-link">
+        <img src="pictures/calendar-0.png" alt="RoadMap" class="central-icon-image">
+        <span class="central-icon-text">Roadmap</span>
+      </a>
+      <a id="storyBtn" class="icon-link">
+        <img src="pictures/address_book-0.png" alt="Story" class="central-icon-image">
+        <span class="central-icon-text">Story</span>
+      </a>
+      <a id="thesisBtn" class="icon-link">
+        <img src="pictures/internet_connection_wiz-2.png" alt="Thesis" class="central-icon-image">
+        <span class="central-icon-text">Thesis</span>
+      </a>
+      <a id="tokenomicsBtn" class="icon-link">
+        <img src="pictures/10269.png" alt="Tokenomics" class="central-icon-image">
+        <span class="central-icon-text">Tokenomics</span>
+      </a>
+      <a id="projectsBtn" class="icon-link">
+        <img src="pictures/channels-2.png" alt="Projects" class="central-icon-image">
+        <span class="central-icon-text">Projects</span>
+      </a>
+      <a id="legendsBtn" class="icon-link">
+        <img src="pictures/users-2.png" alt="Legends" class="central-icon-image">
+        <span class="central-icon-text">Legends</span>
+      </a>
+      <a id="memesBtn" class="icon-link">
+        <img src="pictures/utopia_smiley.png" alt="Memes" class="central-icon-image">
+        <span class="central-icon-text">Memes</span>
+      </a>
+      <a id="Jupiter" class="icon-link" onclick="window.open('https://jup.ag/swap/USDC-CHEEMS', '_blank')">
+        <img src="pictures/jupiter.png" alt="jupiter" class="central-icon-image">
+        <span class="central-icon-text">Jupiter</span>
+      </a>
+      <a id="Birdeye" class="icon-link" onclick="window.open('https://birdeye.so/token/3FoUAsGDbvTD6YZ4wVKJgTB76onJUKz7GPEBNiR5b8wc?chain=solana', '_blank')">
+        <img src="pictures/birdeyeso.jpeg" alt="jupiter" class="central-icon-image">
+        <span class="central-icon-text">Birdeye</span>
+      </a>
+      <a id="X" class="icon-link" onclick="window.open('https://x.com/thecheemstoken', '_blank')">
+        <img src="pictures/X.png" alt="jupiter" class="central-icon-image">
+        <span class="central-icon-text">X</span>
+      </a>
+      <a id="Telegram" class="icon-link" onclick="window.open('https://t.me/CHEEMSISGAY', '_blank')">
+        <img src="pictures/telegram2.png" alt="jupiter" class="central-icon-image">
+        <span class="central-icon-text">Telegram</span>
+      </a>
+      <a id="Discord" class="icon-link" onclick="window.open('https://discord.gg/dyNQmZjXbS', '_blank')">
+        <img src="pictures/Discord.png" alt="jupiter" class="central-icon-image">
+        <span class="central-icon-text">Discord</span>
+      </a>
+      <a id="Solscan" class="icon-link" onclick="window.open('https://solscan.io/token/3FoUAsGDbvTD6YZ4wVKJgTB76onJUKz7GPEBNiR5b8wc', '_blank')">
+        <img src="pictures/Solscan.png" alt="jupiter" class="central-icon-image">
+        <span class="central-icon-text">Solscan</span>
+      </a>
+
+      <a id="Solscan" class="icon-link" onclick="window.open('https://magiceden.io/marketplace/cheemspfp', '_blank')">
+        <img src="pictures/ME%20logo.png" alt="jupiter" class="central-icon-image">
+        <span class="central-icon-text">Cheems PFPs</span>
+      </a>
+      <a id="Pornhub" class="icon-link" onclick="window.open('https://www.youtube.com/watch?v=1QjzMxoW8uk', '_blank')">
+        <img src="pictures/PH.png" alt="jupiter" class="central-icon-image">
+        <span class="central-icon-text">PornHub</span>
+      </a>
+      <a id="kyjBtn" class="icon-link">
+        <img src="pictures/knowyourjeet.png" alt="KYJ" class="central-icon-image">
+        <span class="central-icon-text">KYJ</span>
+      </a>
+    </div>
+
+    <!-- Redesigned Modals -->
+    <div id="roadmapModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Roadmap</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('Roadmap')"></button>
+          </div>
+        </div>
+        <iframe src="roadmap.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="storyModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Story</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('Story')"></button>
+          </div>
+        </div>
+        <div class="menu-bar">
+          <a href="#" class="menu-item">File</a>
+          <a href="#" class="menu-item">Edit</a>
+          <a href="#" class="menu-item">View</a>
+          <a href="#" class="menu-item">Favorites</a>
+          <a href="#" class="menu-item">Tools</a>
+          <a href="#" class="menu-item">Help</a>
+        </div>
+        <div class="menu-function-separator"></div>
+        <iframe src="story.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="tokenomicsModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Tokenomics</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('Tokenomics')"></button>
+          </div>
+        </div>
+        <div class="menu-bar">
+          <a href="#" class="menu-item">File</a>
+          <a href="#" class="menu-item">Edit</a>
+          <a href="#" class="menu-item">View</a>
+          <a href="#" class="menu-item">Favorites</a>
+          <a href="#" class="menu-item">Tools</a>
+          <a href="#" class="menu-item">Help</a>
+        </div>
+        <div class="menu-function-separator"></div>
+        <iframe src="tokenomics.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="buyModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Buy</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('Buy')"></button>
+          </div>
+        </div>
+        <iframe src="buy.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="thesisModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Thesis</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('Thesis')"></button>
+          </div>
+        </div>
+        <div class="menu-bar">
+          <a href="#" class="menu-item">File</a>
+          <a href="#" class="menu-item">Edit</a>
+          <a href="#" class="menu-item">View</a>
+          <a href="#" class="menu-item">Favorites</a>
+          <a href="#" class="menu-item">Tools</a>
+          <a href="#" class="menu-item">Help</a>
+        </div>
+        <div class="menu-function-separator"></div>
+        <iframe src="thesis.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="memesModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Memes</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('Memes')"></button>
+          </div>
+        </div>
+        <div class="menu-bar">
+          <a href="#" class="menu-item">File</a>
+          <a href="#" class="menu-item">Edit</a>
+          <a href="#" class="menu-item">View</a>
+          <a href="#" class="menu-item">Favorites</a>
+          <a href="#" class="menu-item">Tools</a>
+          <a href="#" class="menu-item">Help</a>
+        </div>
+        <div class="menu-function-separator"></div>
+        <iframe src="memes.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="projectsModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Projects</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('Projects')"></button>
+          </div>
+        </div>
+        <div class="menu-bar">
+          <a href="#" class="menu-item">File</a>
+          <a href="#" class="menu-item">Edit</a>
+          <a href="#" class="menu-item">View</a>
+          <a href="#" class="menu-item">Favorites</a>
+          <a href="#" class="menu-item">Tools</a>
+          <a href="#" class="menu-item">Help</a>
+        </div>
+        <div class="ie__function_bar">
+          <div id="projectsBackButton" class="ie__function_bar__button">
+            <img id="projectsBackIcon" class="ie__function_bar__icon--normalize" src="pictures/back.png" alt="Back" style="filter: grayscale(1);">
+            <span class="ie__function_bar__text">Back</span>
+            <img class="ie__function_bar__icon--arrow" src="pictures/arrow_down.png" alt="Arrow Down">
+          </div>
+          <div class="ie__function_bar__separate"></div>
+        </div>
+        <iframe id="projectsIframe" src="projects.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="kyjModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">KYJ</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('kyj')"></button>
+          </div>
+        </div>
+        <div class="menu-bar">
+          <a href="#" class="menu-item">File</a>
+          <a href="#" class="menu-item">Edit</a>
+          <a href="#" class="menu-item">View</a>
+          <a href="#" class="menu-item">Favorites</a>
+          <a href="#" class="menu-item">Tools</a>
+          <a href="#" class="menu-item">Help</a>
+        </div>
+        <div class="menu-function-separator"></div>
+        <iframe id="kyjIframe" src="KYJ.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+
+    <div id="legendsModal" class="modal hidden">
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">Legends</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimise"></button>
+            <button aria-label="Maximise"></button>
+            <button aria-label="Close" onclick="closeModal('Legends')"></button>
+          </div>
+        </div>
+        <div class="menu-bar">
+          <a href="#" class="menu-item">File</a>
+          <a href="#" class="menu-item">Edit</a>
+          <a href="#" class="menu-item">View</a>
+          <a href="#" class="menu-item">Favorites</a>
+          <a href="#" class="menu-item">Tools</a>
+          <a href="#" class="menu-item">Help</a>
+        </div>
+        <div class="ie__function_bar">
+          <div id="legendsBackButton" class="ie__function_bar__button">
+            <img id="legendsBackIcon" class="ie__function_bar__icon--normalize" src="pictures/back.png" alt="Back" style="filter: grayscale(1);">
+            <span class="ie__function_bar__text">Back</span>
+            <img class="ie__function_bar__icon--arrow" src="pictures/arrow_down.png" alt="Arrow Down">
+          </div>
+          <div class="ie__function_bar__separate"></div>
+        </div>
+        <iframe id="legendsIframe" src="legends.html" frameborder="0" class="section-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle the loading screen
+    setTimeout(() => {
+      const loadingScreen = document.getElementById('loadingScreen');
+      const mainContent = document.getElementById('mainContent');
+      loadingScreen.classList.add('hidden');
+      setTimeout(() => {
+        loadingScreen.style.display = 'none'; // Completely remove the loading screen
+        mainContent.classList.add('show');
+      }, 1000); // Wait for the fade-out transition to complete
+    }, 5000); // Adjust the delay time as needed
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

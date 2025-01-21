@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeet Master Test</title>
+  <link rel="stylesheet" href="css2?family=Lilita+One&display=swap">
+  <style>
+    body {
+      font-family: 'Lilita One', cursive, sans-serif;
+      background-color: #fffbcc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      /* Prevent vertical scrolling */
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border: 5px dashed #ff6600;
+      border-radius: 15px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .question {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .question.active {
+      display: block;
+      opacity: 1;
+      animation: slideIn 0.5s ease-in-out;
+    }
+
+    label {
+      font-size: 1.2em;
+      color: #cc0033;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1.1em;
+      border: 2px solid #ff6600;
+      border-radius: 5px;
+    }
+
+    textarea {
+      width: 80%;
+      height: 100px;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1.1em;
+      border: 2px solid #ff6600;
+      border-radius: 5px;
+      resize: none;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    input[type="radio"] {
+      margin: 0 10px;
+    }
+
+    .next-button,
+    .submit-button {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #ff0066;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      border: 3px solid #cc0033;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .next-button:hover,
+    .submit-button:hover {
+      background-color: #cc0033;
+      transform: scale(1.1);
+    }
+
+    button:disabled {
+      background-color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .small-text {
+      font-size: 0.9em;
+      text-align: left;
+      margin: 10px 0;
+    }
+
+    .success-message {
+      font-size: 1.5em;
+      color: #4caf50;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      animation: confetti-fall 3s linear infinite;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-100px);
+      }
+
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="jeetMasterTest">
+      <input type="hidden" id="randomAmount" name="randomAmount">
+      <div class="question active" data-question="1">
+        <label for="username">How would you like the jeets to call you?</label>
+        <input type="text" id="username" name="username" required="">
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="2">
+        <p>Welcome, master <span id="displayUsername"></span></p>
+        <label>Can you hold a secret?</label>
+        <input type="radio" id="secretYes" name="secret" value="yes" required=""> Yes
+        <input type="radio" id="secretNo" name="secret" value="no"> No
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="3">
+        <label>Are you a cheems holder?</label>
+        <input type="radio" name="cheemsHolder" value="yes" required=""> Yes
+        <input type="radio" name="cheemsHolder" value="no"> No
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="4">
+        <label for="howMuch">How much you hold?</label>
+        <input type="text" id="howMuch" name="howMuch" required="">
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="5">
+        <label for="address">What's your address?</label>
+        <input type="text" id="address" name="address" required="">
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="6">
+        <label>Prove it:</label>
+        <p>Send <span id="randomAmountDisplay"></span> cheems to sex.sol</p>
+        <p>(you don't have to do it right now, but save the amount to send it later)</p>
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="7">
+        <label>Are you ready to work for your bag?</label>
+        <input type="radio" name="workForBag" value="yes" required=""> Yes
+        <input type="radio" name="workForBag" value="no"> No
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="8">
+        <label for="xHandle">What is your X @?</label>
+        <input type="text" id="xHandle" name="xHandle" required="">
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="9">
+        <label>How long are you spending on X on a daily basis?</label>
+        <select name="timeOnX" required="">
+          <option value="30min">I don't watch porn</option>
+          <option value="30min">30 min</option>
+          <option value="1hour">1 hour</option>
+          <option value="2hours">2 hours</option>
+          <option value="3hours">3 hours or more</option>
+        </select>
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="10">
+        <label>Would you be willing to subscribe to the paid version of the protocol? ($80 for premium+ $40 for
+          premium)</label>
+        <div class="small-text">
+          <p>The Jeets Protocol offers a subscription plan ranging from $40 to $80 per month. This fee
+            includes the cost of maintaining the blue tick on X for your Jeets. While a free version is
+            available, it is less effective compared to the premium subscription.</p>
+          <p>The protocol primarily targets Cheems holders with at least a mid four-figure investment in
+            Cheems. Although this may seem like a significant investment, it is designed to benefit those
+            with substantial Cheems holdings, as they can shill and make their investment grow.
+          <p>Consider this: with just 10 people subscribing to this plan each month, we could mobilize 100
+            Jeets to
+            actively promote Cheems on Twitter. This collective effort can significantly amplify our
+            presence and drive engagement.</p>
+          <p> Additionally, the Cheems Foundation will provide financial assistance to some users, but we seek
+            your support to ensure the protocol's success.</p>
+        </div>
+        <input type="radio" name="blueTick" value="Prenium+" required=""> Prenium+
+        <input type="radio" name="blueTick" value="Prenium"> Prenium
+        <input type="radio" name="blueTick" value="Free"> Free
+        <input type="radio" name="blueTick" value="IDK"> I don't know
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="11">
+        <label for="fitReason">Can you explain why you think you would be a great fit for being an early adopter
+          of the Jeets Protocol?</label>
+        <textarea id="fitReason" name="fitReason" required=""></textarea>
+        <button type="button" class="next-button">Next</button>
+      </div>
+      <div class="question" data-question="12">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+    <div id="successMessage" class="success-message" style="display: none;">
+      Congratulations, you will receive a Twitter DM from @TheCheemsToken if your application was successful!
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('jeetMasterTest');
+      const questions = form.querySelectorAll('.question');
+      const nextButtons = form.querySelectorAll('.next-button');
+      let currentQuestion = 0;
+
+      function allFieldsFilled(inputs) {
+        let allFilled = true;
+        const radioGroups = {};
+
+        inputs.forEach(input => {
+          if (input.type === 'radio') {
+            if (!radioGroups[input.name]) {
+              radioGroups[input.name] = false;
+            }
+            if (input.checked) {
+              radioGroups[input.name] = true;
+            }
+          } else if (input.type !== 'radio' && input.value === '') {
+            allFilled = false;
+          }
+        });
+
+        for (const group in radioGroups) {
+          if (!radioGroups[group]) {
+            allFilled = false;
+          }
+        }
+
+        return allFilled;
+      }
+
+      function generateRandomAmount() {
+        const randomAmount = (Math.random() * 10).toFixed(4);
+        document.getElementById('randomAmount').value = randomAmount;
+        document.getElementById('randomAmountDisplay').textContent = randomAmount;
+      }
+
+      function formatNumber(input) {
+        input.value = input.value.replace(/\D/g, "");
+        let value = parseFloat(input.value.replace(/,/g, ""));
+        if (!isNaN(value)) {
+          input.value = value.toLocaleString("en-US", {minimumFractionDigits: 0, maximumFractionDigits: 4});
+        }
+      }
+
+      document.getElementById('howMuch').addEventListener('input', function (e) {
+        const caretPosition = e.target.selectionStart;
+        const originalLength = e.target.value.length;
+
+        formatNumber(e.target);
+
+        const newLength = e.target.value.length;
+        e.target.setSelectionRange(caretPosition + (newLength - originalLength), caretPosition + (newLength - originalLength));
+      });
+
+      nextButtons.forEach((button, index) => {
+        button.addEventListener('click', function () {
+          const current = questions[currentQuestion];
+          const inputs = current.querySelectorAll('input, select, textarea');
+
+          if (allFieldsFilled(inputs)) {
+            if (currentQuestion === 1 && document.querySelector('input[name="secret"]:checked').value === 'no') {
+              window.open('https://www.youtube.com/watch?v=1QjzMxoW8uk', '_blank');
+              return;
+            }
+
+            if (currentQuestion === 2 && document.querySelector('input[name="cheemsHolder"]:checked').value === 'no') {
+              window.open('https://www.youtube.com/watch?v=1QjzMxoW8uk', '_blank');
+              return;
+            }
+
+            if (currentQuestion === 6 && document.querySelector('input[name="workForBag"]:checked').value === 'no') {
+              window.open('https://www.youtube.com/watch?v=1QjzMxoW8uk', '_blank');
+              return;
+            }
+
+            current.classList.remove('active');
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+              const next = questions[currentQuestion];
+              next.classList.add('active');
+
+              if (currentQuestion === 1) {
+                const username = document.getElementById('username').value;
+                document.getElementById('displayUsername').textContent = username;
+              }
+
+              if (currentQuestion === 5) {
+                generateRandomAmount();
+              }
+            }
+          } else {
+            alert('Please fill out all fields.');
+          }
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        fetch('https://jeetspro.replit.app/submit_form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+            form.querySelector('button[type="submit"]').disabled = true;
+            form.querySelector('button[type="submit"]').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            addConfetti();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Error submitting form');
+          });
+      });
+
+      function addConfetti() {
+        const confettiCount = 100;
+        const container = document.querySelector('.container');
+        const colors = ['#ff6600', '#ff0066', '#4caf50', '#33ccff', '#ffcc00'];
+
+        for (let i = 0; i < confettiCount; i++) {
+          const confetti = document.createElement('div');
+          confetti.classList.add('confetti');
+          confetti.style.left = Math.random() * 100 + 'vw';
+          confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.animationDelay = Math.random() * 3 + 's';
+          container.appendChild(confetti);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

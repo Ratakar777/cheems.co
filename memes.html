@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memes Collection</title>
+  <link rel="stylesheet" href="memes.css">
+  <script async="" src="widgets.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <!-- Header image with memes.gif (old style applied) -->
+  <div class="header-image">
+    <img src="pictures/memes.gif" alt="Memes Collection" style="width: 100%; display: block; margin: auto;">
+  </div>
+
+  <!-- Embed tweets -->
+  <div class="tweet-container" id="tweetContainer">
+    <!-- Tweets will be dynamically inserted here -->
+  </div>
+
+  <!-- Dynamic GIF Gallery (old style logic applied) -->
+  <div class="link-container" id="gifContainer">
+    <!-- GIFs will be dynamically inserted here -->
+  </div>
+
+  <script>
+    // Array of tweet URLs
+    const tweetUrls = [
+      "https://twitter.com/thesardine9/status/1788219378191757407",
+      "https://twitter.com/thecheemstoken/status/1393408157804810245",
+      "https://twitter.com/thecheemstoken/status/1782367276391412150",
+      "https://twitter.com/thecheemstoken/status/1775916787952951342",
+      "https://twitter.com/thecheemstoken/status/1739149638790262922",
+      "https://twitter.com/thecheemstoken/status/1780700240452215165",
+      "https://twitter.com/thecheemstoken/status/1776427662363279579",
+      "https://twitter.com/thecheemstoken/status/1776192123840143380",
+      "https://twitter.com/thecheemstoken/status/1776076176793936236",
+      "https://twitter.com/thecheemstoken/status/1738626435613417823",
+      "https://twitter.com/thecheemstoken/status/1392589387347763202",
+      "https://twitter.com/thecheemstoken/status/1453870760666279945",
+      "https://twitter.com/thecheemstoken/status/1727937445579071973",
+      "https://twitter.com/thecheemstoken/status/1787266966002020502",
+      "https://twitter.com/thecheemstoken/status/1784477127737270404",
+      "https://twitter.com/thecheemstoken/status/1781817492702134509",
+      "https://twitter.com/thecheemstoken/status/1781417700486529167",
+      "https://twitter.com/thecheemstoken/status/1780447586492600637",
+      "https://twitter.com/thecheemstoken/status/1780064338436349979",
+      "https://twitter.com/thecheemstoken/status/1778819830725910792",
+      "https://twitter.com/thecheemstoken/status/1778120951453848063",
+      "https://twitter.com/thecheemstoken/status/1777873123351593096",
+      "https://twitter.com/thecheemstoken/status/1776588906999243211",
+      "https://twitter.com/thecheemstoken/status/1776137167519048011",
+      "https://twitter.com/thecheemstoken/status/1736150125817278576",
+      "https://twitter.com/thecheemstoken/status/1735899718478151859",
+      "https://twitter.com/thecheemstoken/status/1734216009580433816",
+      "https://twitter.com/thecheemstoken/status/1453185891229446144",
+      "https://twitter.com/thecheemstoken/status/1441042232468025346"
+    ];
+
+    // Container for tweets
+    const tweetContainer = document.getElementById('tweetContainer');
+
+    // Iterate over tweet URLs and create tweet embeds
+    tweetUrls.forEach(url => {
+      const tweetEmbed = document.createElement('blockquote');
+      tweetEmbed.className = 'twitter-tweet';
+      const tweetLink = document.createElement('a');
+      tweetLink.href = url;
+      tweetLink.innerText = 'Tweet';
+      tweetEmbed.appendChild(tweetLink);
+      tweetContainer.appendChild(tweetEmbed);
+    });
+
+    // Array of GIF URLs (applied with the old style)
+    const gifUrls = [
+      "https://media.giphy.com/media/CvZU0c5x5kGlyk94dK/giphy.gif",
+      "https://media.giphy.com/media/KXRgUBBLiaapYAXsTv/giphy.gif",
+      "https://media.giphy.com/media/97TMRNsK4ho2lQfyhZ/giphy.gif",
+      "https://media.giphy.com/media/fkCvLtcBRlpuuNcDik/giphy.gif",
+      "https://media.giphy.com/media/nMt3HSOC7OjiUxxSjF/giphy.gif",
+      "https://media.giphy.com/media/pkSzCxdUA9KcLFef38/giphy-downsized-large.gif",
+      "https://media.tenor.com/A1jcviH1jscAAAAM/cheems.gif",
+      "https://i.imgflip.com/4ugc8u.gif",
+      "https://i.pinimg.com/originals/f1/d2/fe/f1d2fe7bafb49df1e6a17cd43d1cc7e1.gif",
+      "https://i.pinimg.com/originals/26/97/d8/2697d802df6105c604fafdf06235a429.gif",
+      "https://media1.giphy.com/avatars/DogeBONK/coZ41g2NwRFS.gif",
+      "https://media0.giphy.com/media/IF0a7qASuTexF2kRc9/giphy.gif",
+      "https://media1.giphy.com/media/dGRxA7RIqf5EEnIz6f/giphy.gif",
+      "https://media4.giphy.com/media/IcivF1nMsCg8AQE50U/giphy.gif",
+      "https://media.tenor.com/3I2Peuks5rkAAAAM/dogefrog-frog.gif",
+      "https://media.tenor.com/d59D_vHVBUkAAAAM/vibing-cheems.gif",
+      "https://media.tenor.com/K0HVCg5P4mIAAAAi/spinning-cheems-kbekeb-gif.gif",
+      "https://media.tenor.com/eAcgenPyPSQAAAAM/cheems-bbcheems.gif",
+      "https://media1.tenor.com/m/aS-TCsGpQUcAAAAC/doge-dogecoin.gif",
+      "https://media1.tenor.com/m/woeBT8k_F6wAAAAC/dogs-cute.gif",
+      "https://media1.tenor.com/m/6dnmDuw17jcAAAAC/hello-dogecoin.gif",
+      "https://media.tenor.com/l4D_eAGUPm0AAAAM/twitter-discord-mod.gif",
+      "https://media.tenor.com/-njDgLTb_EkAAAAM/celestev69-cheems.gif",
+      "https://media1.tenor.com/m/aifGQmLaJ3UAAAAd/big-booty.gif",
+      "https://media1.tenor.com/m/qB0YmLRXgLcAAAAC/angry-cheems-fire-donuts-gun.gif",
+      "https://media1.tenor.com/m/msnzGs7Cz1QAAAAC/cheemspanpo-panpo.gif",
+      "https://media1.tenor.com/m/hL78TB2RU6MAAAAd/dog-with-a-lightsaber-the-doge-nft.gif",
+      "https://media1.tenor.com/m/4BKaCLJMLpYAAAAC/big-booty.gif",
+      "https://media.tenor.com/gm6wnqebbvoAAAAM/cheems-adios.gif",
+      "https://media1.tenor.com/m/vz5Ya6C5irsAAAAC/cheems-booty.gif",
+      "https://media1.tenor.com/m/fA-4A3-oGhMAAAAC/cheems-dance.gif",
+      "https://media1.tenor.com/m/s_Z1n9CmAPYAAAAd/practice-this.gif",
+      "https://media.tenor.com/2_nOE-tC0fEAAAAM/exercise-memes.gif",
+      "https://media1.tenor.com/m/V5te4-RiO5kAAAAd/dorime-doge.gif",
+      "https://media1.tenor.com/m/1l7moxrazzUAAAAC/honest-work.gif",
+      "https://media1.giphy.com/media/vXphlJ39th2iMERwcp/giphy.gif",
+      "https://media1.giphy.com/media/muDCefbSoZJdY9mb5v/200w.gif",
+      "https://media.tenor.com/u2aiZdZYOmYAAAAC/tradeoffercheems-cheems.gif",
+      "https://media.tenor.com/m2Cj9MOgbTAAAAAC/cheems-mariusz.gif",
+      "https://media.tenor.com/EEIQ3qTF9BYAAAAC/cheems.gif"
+    ];
+
+    // Container for GIFs
+    const gifContainer = document.getElementById('gifContainer');
+
+    // Iterate over GIF URLs and create GIF links (old style logic)
+    gifUrls.forEach(url => {
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank'; // Open links in a new tab
+      link.classList.add('link-item');
+      link.innerHTML = `<img src="${url}" alt="Gif">`;
+      gifContainer.appendChild(link);
+    });
+  </script>
+</body>
+
+</html>

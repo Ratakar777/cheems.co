@@ -1,0 +1,228 @@
+/* Global styling for the body to ensure full background coverage */
+body {
+  background-color: #1e1e1e;
+  color: #c7c7c7;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Button container for consistent button placement */
+.button-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+/* Button styling */
+button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button::before {
+  content: "←";
+  margin-right: 10px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/* Basic styling for the text container */
+.text-container {
+  max-width: 800px;
+  margin: 60px auto 20px;
+  padding: 0 20px;
+  text-align: justify;
+  box-sizing: border-box;
+  width: 90%;
+}
+
+/* General styling for images within the text container */
+.cheems-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  width: auto;
+  /* Adjust width to maintain aspect ratio */
+  height: auto;
+  /* Adjust height to maintain aspect ratio */
+  border: 1px solid #555;
+  box-sizing: border-box;
+}
+
+/* Adjustments for embedded content like iframes for Twitter */
+iframe {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: auto;
+  border: none;
+}
+
+/* Responsive container for Twitter embedding */
+.twitter-embed {
+  margin: 20px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cheems-balltze,
+.cheems-swole-doge,
+.cheems-bonk,
+.cheems-digital-art,
+.cheems-styled-art {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  color: #ffffff;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+blockquote {
+  font-style: italic;
+  background-color: #333333;
+  border-left: 10px solid #555555;
+  margin: 1em 10px;
+  padding: 0.5em 10px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #0096FF;
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  .text-container {
+    padding: 0 10px;
+  }
+
+  .cheems-image,
+  iframe {
+    margin: 15px auto;
+  }
+}
+
+/* DICKDDJWDJWDJDWJDWJDWJWD */
+
+/* DICKDDJWDJWDJDWJDWJDWJWD */
+
+/* Scrollbar sizing */
+::-webkit-scrollbar {
+  width: 18px;
+  height: 16px;
+}
+
+/* Thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background:
+    url('../scrollbar/scroll-thumb.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  /* Adjust the rounded corners of the rectangle */
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the thumb slightly to the left */
+  margin-left: -2px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background:
+    url('../scrollbar/scroll-thumb-horizontal.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the horizontal thumb slightly to the left if needed */
+  margin-left: -2px;
+}
+
+/* Track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  /* Rounded corners for the track */
+}
+
+/* Up button */
+::-webkit-scrollbar-button:start {
+  background-image: url('../scrollbar/scroll-arrow-up.svg');
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  /* Rounded corners for the button */
+}
+
+/* Down button */
+::-webkit-scrollbar-button:end {
+  background-image: url('../scrollbar/scroll-arrow-down.svg');
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  /* Rounded corners for the button */
+}
+
+/* Hide extra up button */
+::-webkit-scrollbar-button:start:decrement {
+  display: none;
+}
+
+/* Hide extra down button */
+::-webkit-scrollbar-button:end:increment {
+  display: none;
+}
+
+/* Horizontal scrollbar buttons */
+
+/* Hide extra left button */
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  display: none;
+}
+
+/* Hide extra right button */
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none;
+}
+
+/* Reverse button actions */
+/* When clicking the up button, it should go down */
+::-webkit-scrollbar-button:start:decrement {
+  background-image: url('../scrollbar/scroll-arrow-down.svg');
+}
+
+/* When clicking the down button, it should go up */
+::-webkit-scrollbar-button:end:increment {
+  background-image: url('../scrollbar/scroll-arrow-up.svg');
+}

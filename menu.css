@@ -1,0 +1,436 @@
+/* Initially hidden, toggle visibility with JavaScript */
+.startmenu {
+  position: absolute;
+  left: 0px;
+  bottom: 35px;
+  width: 440px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(66, 130, 214);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  align-items: center;
+  box-shadow: rgb(0 0 0 / 50%) 2px 4px 2px;
+  z-index: 9999;
+  /* Increase z-index value */
+}
+
+button,
+.systemBtn {
+  background: none;
+  /* Removes any background */
+  border: none;
+  /* Removes the border */
+  padding: 0;
+  /* Removes padding if not needed */
+  /* Other styles */
+}
+
+.hidden {
+  display: none;
+}
+
+.menutopbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 98%;
+  padding: 6px 5px;
+  height: 12%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+  background: linear-gradient(rgb(24, 104, 206) 0%,
+      rgb(14, 96, 203) 12%,
+      rgb(14, 96, 203) 20%,
+      rgb(17, 100, 207) 32%,
+      rgb(22, 103, 207) 33%,
+      rgb(27, 108, 211) 47%,
+      rgb(30, 112, 217) 54%,
+      rgb(36, 118, 220) 60%,
+      rgb(41, 122, 224) 65%,
+      rgb(52, 130, 227) 77%,
+      rgb(55, 134, 229) 79%,
+      rgb(66, 142, 233) 90%,
+      rgb(71, 145, 235) 100%);
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: white;
+  height: 79%;
+
+}
+
+.menubtmbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 8%;
+  background: linear-gradient(rgb(66, 130, 214) 0%,
+      rgb(59, 133, 224) 3%,
+      rgb(65, 138, 227) 5%,
+      rgb(65, 138, 227) 17%,
+      rgb(60, 135, 226) 21%,
+      rgb(55, 134, 228) 26%,
+      rgb(52, 130, 227) 29%,
+      rgb(46, 126, 225) 39%,
+      rgb(35, 116, 223) 49%,
+      rgb(32, 114, 219) 57%,
+      rgb(25, 110, 219) 62%,
+      rgb(23, 107, 216) 72%,
+      rgb(20, 104, 213) 75%,
+      rgb(17, 101, 210) 83%,
+      rgb(15, 97, 203) 88%);
+  z-index: 99999;
+}
+
+/* Decorative horizontal rules */
+.greyhr,
+.orangehr,
+.bluehr,
+.whitehr {
+  width: 100%;
+  height: 2px;
+  /* Adjusted for uniformity */
+  background: linear-gradient(to right, transparent 0%, #d2d2d2 50%, transparent 100%);
+  border: 0;
+}
+
+/* Specific heights for different horizontal rules */
+.orangehr {
+  height: 4px;
+}
+
+.bluehr {
+  background: linear-gradient(to right, transparent 0%, rgba(135, 179, 226, 0.71) 50%, transparent 100%);
+}
+
+.whitehr {
+  width: 97%;
+  background: #6fb1f8;
+}
+
+.leftmenu,
+.rightmenu {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  /* For leftmenu specifically */
+}
+
+.rightmenu {
+  padding: 10px 0;
+  /* Add padding at the top and bottom */
+  padding-left: 5px;
+  background-color: #d2e5fa;
+  border-left: 1px solid #a6bbd6;
+  height: calc(100% - 20px);
+  /* Adjust height to accommodate padding */
+}
+
+
+.allprograms,
+.systemBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  height: 30px;
+  margin: 3px;
+  cursor: default;
+}
+
+.allprograms:hover,
+.systemBtn:hover {
+  color: white;
+  background-color: #2f71cd;
+}
+
+.systemBtnIcon {
+  border-radius: 3px;
+  margin-right: 3px;
+}
+
+
+
+.profile-pic {
+  width: 50px;
+  /* Adjust size as needed */
+  height: 50px;
+  /* Adjust size as needed */
+  border-radius: 10%;
+  /* Rounded corners */
+  margin-right: 10px;
+  /* Space between the image and text */
+  border: 2px solid #b8c2d5;
+  /* White border, adjust color as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* Shadow with mild blur */
+}
+
+
+.profile-text {
+  font-weight: bold;
+  color: white;
+  /* or any color that fits your design */
+  vertical-align: middle;
+  /* aligns text with the image */
+  font-family: Tahoma, Arial, sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  /* Darker and larger shadow */
+  /* Shadow effect */
+}
+
+.systemBtn,
+.systemBtn:focus,
+.systemBtn:active,
+.systemBtn:hover {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  /* In case the border is actually a shadow */
+}
+
+
+
+.systemBtn {
+  background-color: transparent;
+  /* Set button background to transparent */
+  color: white;
+  border: 0px solid #ffffff;
+  /* Optional: add a white border if needed */
+  padding: 5px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  /* Soften the edges */
+  ]
+  /* Add subtle shadow */
+  transition: background-color 0.3s, color 0.3s;
+  /* Smooth transition for hover effect */
+}
+
+.systemBtnIcon {
+  border-radius: 3px;
+  margin-right: 3px;
+}
+
+.systemBtn:hover {
+  background-color: #1a6ebd;
+  /* Darker blue on hover */
+  color: #ffffff;
+  /* Ensure text is white on hover */
+}
+
+/* New CSS for icon size and alignment */
+.systemBtnIcon {
+  width: 24px;
+  /* Adjust the width as needed */
+  height: 24px;
+  /* Adjust the height as needed */
+}
+
+/* Make text bold for the first five buttons */
+.rightmenu .systemBtn:nth-child(-n+5) span {
+  font-weight: bold;
+}
+
+/* Updated CSS for button text */
+.rightmenu .systemBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Align icons to the left */
+  width: 95%;
+  /* Set a fixed width for the buttons */
+  color: black;
+  /* Set text color to black */
+}
+
+.rightmenu .systemBtn img {
+  margin-right: 10px;
+  /* Adjust the margin as needed */
+  margin-left: 5px;
+  /* Add left margin for the icons */
+  width: 33px;
+  /* Set a fixed width for the icons */
+  height: 33px;
+  /* Set a fixed height for the icons */
+}
+
+.rightmenu .systemBtn span {
+  word-break: break-all;
+  /* Break text at any point */
+}
+
+/* Make text not bold for buttons after the first five */
+.rightmenu .systemBtn:nth-child(n+6) span {
+  font-weight: normal;
+}
+
+.leftmenu {
+  width: 60%;
+  height: 100%;
+  margin-right: 10px;
+  /* Consistent right margin */
+  padding-top: 10px;
+  /* Adds padding at the top */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Align items at the top */
+  background-color: #ffffff;
+}
+
+
+.leftmenu button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 200px;
+  /* Adjust the width as needed */
+  color: black;
+  /* Set text color to black */
+  padding: 10px;
+  /* Add padding to create space */
+}
+
+.leftmenu button img {
+  margin-right: 10px;
+  /* Adjust the margin as needed */
+  width: 30px;
+  /* Fixed width for uniformity */
+  height: 30px;
+  /* Fixed height for uniformity */
+  object-fit: contain;
+  /* Ensures the image fits without distorting */
+}
+
+.leftmenu button span {
+  font-weight: normal;
+}
+
+.leftmenu button:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .startmenu {
+    width: 385px;
+    /* Adjusted width for smaller screens */
+    height: 525px;
+    /* Adjusted height for smaller screens */
+    bottom: 35px;
+    /* Alignment preserved */
+  }
+
+  .menutopbar,
+  .menu,
+  .menubtmbar {
+    height: calc(50px * 1.75);
+    /* Height adjusted for responsive design */
+  }
+
+  .menubtmbar {
+    height: calc(10% * 1.75);
+    /* Responsive height adjustment */
+  }
+
+  .menu {
+    height: calc(80% * 1.75);
+    /* Responsive height adjustment */
+  }
+
+  .menutopbar {
+    padding: calc(3px * 1.75) calc(2.5px * 1.75);
+    /* Responsive padding */
+  }
+
+  .leftmenu,
+  .rightmenu {
+    height: 100%;
+    /* Maintain full height within container */
+  }
+
+  .allprograms,
+  .systemBtn {
+    height: calc(25px * 1.75);
+    /* Responsive height adjustment */
+  }
+
+  /* Adjusting styles for right menu buttons on smaller screens */
+  .rightmenu .systemBtn {
+    width: 95%;
+    /* Fixed width for uniformity */
+    height: 25px;
+    /* Adjusted height */
+    color: black;
+    /* Making text color red for visibility */
+    font-size: 11px;
+    /* Adjusted font size for readability */
+    margin-bottom: 10px;
+    /* Space between buttons */
+    padding-left: 0;
+    /* Padding adjusted */
+  }
+
+  .rightmenu .systemBtn img {
+    margin-right: 5px;
+    margin-left: 1px;
+    width: 27px;
+    /* Adjust icon size */
+    height: 27px;
+    /* Adjust icon size */
+  }
+
+  /* Adjusting styles for left menu buttons on smaller screens */
+  .leftmenu button {
+    width: 100%;
+    /* Full width within the container */
+    color: black;
+    /* Making text color red for visibility */
+    font-size: 12px;
+    /* Adjusted font size for readability */
+    padding: 5px 10px;
+    /* Adjusted padding for compact appearance */
+  }
+
+  .leftmenu button img {
+    width: 25px;
+    /* Adjust icon size */
+    height: 25px;
+    /* Adjust icon size */
+    margin-right: 5px;
+    /* Adjust spacing */
+  }
+
+  .leftmenu button:not(:last-child) {
+    margin-bottom: 10px;
+    /* Adjust spacing between buttons */
+  }
+
+  .profile-pic {
+    width: 40px;
+    /* Reduced from 50px */
+    height: 40px;
+    /* Reduced from 50px */
+    border-radius: 10%;
+    /* Maintained the border radius */
+    margin-right: 10px;
+    /* Kept the existing margin */
+    border: 2px solid #b8c2d5;
+    /* Kept the existing border style */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Kept the existing box shadow */
+  }
+
+}

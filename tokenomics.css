@@ -1,0 +1,354 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.contract-label,
+.contract-address {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0;
+  /* Adjust padding if needed */
+}
+
+/* Ensure the body still centers everything properly */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  padding: 20px 0;
+  /* Adjust based on your layout */
+}
+
+
+.chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.circulation-info {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.donut-chart {
+  width: 50vw;
+  height: 50vw;
+  background: conic-gradient(green 0% 85%, red 85% 92%, yellow 92% 96%, blue 96% 100%);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-right: 50px;
+}
+
+.donut-chart::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  right: 25%;
+  bottom: 25%;
+  background: #1e1e1e;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.donut-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25vw;
+  height: auto;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.green {
+  background: #00a000;
+}
+
+.red {
+  background: #d32f2f;
+}
+
+.yellow {
+  background: #fbc02d;
+}
+
+.blue {
+  background: #1976d2;
+}
+
+button {
+  position: relative;
+  padding: 10px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  overflow: hidden;
+  width: auto;
+  max-width: 90%;
+  margin: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button::before,
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+  border-width: 6px 6px 0 6px;
+  transition: transform 0.3s ease;
+}
+
+button::before {
+  left: 10px;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+button::after {
+  right: 10px;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+button.active::before,
+button.active::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.detailsText {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  width: 80%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+li {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Hyperlink styling to ensure they are always the same blue color */
+a,
+a:link,
+a:visited {
+  color: #007bff;
+  /* Classic blue color for links */
+  text-decoration: none;
+  /* Removes underline from links */
+}
+
+a:hover,
+a:active {
+  color: #0056b3;
+  /* Slightly darker blue for hover and active states */
+  text-decoration: underline;
+  /* Adds underline on hover */
+}
+
+/* Contract Address Styling */
+.contract-label {
+  font-size: 2.5vw;
+  /* Larger initial size for the label */
+  text-align: center;
+  margin-bottom: 5px;
+  color: #e0e0e0;
+  min-font-size: 22px;
+  /* Ensures it doesn't get too small */
+}
+
+.contract-address {
+  font-size: 2.2vw;
+  /* Responsive font size for the actual contract address */
+  max-width: 90vw;
+  word-wrap: break-word;
+  text-align: center;
+  color: #007bff;
+  min-font-size: 18px;
+  /* Ensures it doesn't get too small */
+}
+
+@media (max-width: 600px) {
+  .chart-container {
+    flex-direction: column;
+  }
+
+  .donut-chart {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .donut-logo {
+    width: 30vw;
+  }
+
+  button {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .legend {
+    margin-top: 10px;
+  }
+
+  /* Adjust the contract address font size on smaller screens */
+  .contract-address {
+    font-size: 6vw;
+    /* Larger to keep readability but still responsive */
+    min-font-size: 18px;
+    /* Ensures it doesn't get too small */
+  }
+
+  .contract-label {
+    font-size: 5vw;
+    /* Larger to keep readability but still responsive */
+    min-font-size: 20px;
+    /* Ensures it doesn't get too small */
+  }
+}
+
+
+
+
+
+/* DICKDDJWDJWDJDWJDWJDWJWD */
+/* Scrollbar sizing */
+::-webkit-scrollbar {
+  width: 18px;
+  height: 16px;
+}
+
+/* Thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background:
+    url('scrollbar/scroll-thumb.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  /* Adjust the rounded corners of the rectangle */
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the thumb slightly to the left */
+  margin-left: -2px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background:
+    url('scrollbar/scroll-thumb-horizontal.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the horizontal thumb slightly to the left if needed */
+  margin-left: -2px;
+}
+
+/* Track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  /* Rounded corners for the track */
+}
+
+/* Up button */
+::-webkit-scrollbar-button:start {
+  background-image: url('scrollbar/scroll-arrow-up.svg');
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  /* Rounded corners for the button */
+}
+
+/* Down button */
+::-webkit-scrollbar-button:end {
+  background-image: url('scrollbar/scroll-arrow-down.svg');
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  /* Rounded corners for the button */
+}
+
+/* Hide extra up button */
+::-webkit-scrollbar-button:start:decrement {
+  display: none;
+}
+
+/* Hide extra down button */
+::-webkit-scrollbar-button:end:increment {
+  display: none;
+}
+
+/* Horizontal scrollbar buttons */
+
+/* Hide extra left button */
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  display: none;
+}
+
+/* Hide extra right button */
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none;
+}
+
+/* Reverse button actions */
+/* When clicking the up button, it should go down */
+::-webkit-scrollbar-button:start:decrement {
+  background-image: url('scrollbar/scroll-arrow-down.svg');
+}
+
+/* When clicking the down button, it should go up */
+::-webkit-scrollbar-button:end:increment {
+  background-image: url('scrollbar/scroll-arrow-up.svg');
+}

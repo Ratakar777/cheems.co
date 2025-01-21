@@ -1,0 +1,185 @@
+/* thejeetsprotocol.css */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button-container {
+  width: 100%;
+  text-align: left;
+}
+
+.content {
+  width: 80%;
+  margin: 20px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+}
+
+.status-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.status-dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.live {
+  background-color: green;
+}
+
+.coming-soon {
+  background-color: yellow;
+}
+
+.paused {
+  background-color: orange;
+}
+
+.status-text {
+  margin-left: 5px;
+  color: white;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 0 5px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button::before {
+  content: "←";
+  margin-right: 10px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+
+/* DICKDDJWDJWDJDWJDWJDWJWD */
+/* Scrollbar sizing */
+::-webkit-scrollbar {
+  width: 18px;
+  height: 16px;
+}
+
+/* Thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background:
+    url('scrollbar/scroll-thumb.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  /* Adjust the rounded corners of the rectangle */
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the thumb slightly to the left */
+  margin-left: -2px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background:
+    url('scrollbar/scroll-thumb-horizontal.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the horizontal thumb slightly to the left if needed */
+  margin-left: -2px;
+}
+
+/* Track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+  background: white;
+  /* Set the background color to white */
+  border-radius: 0px;
+  /* Rounded corners for the track */
+}
+
+
+/* Up button */
+::-webkit-scrollbar-button:start {
+  background-image: url('scrollbar/scroll-arrow-up.svg');
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  /* Rounded corners for the button */
+}
+
+/* Down button */
+::-webkit-scrollbar-button:end {
+  background-image: url('scrollbar/scroll-arrow-down.svg');
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  /* Rounded corners for the button */
+}
+
+/* Hide extra up button */
+::-webkit-scrollbar-button:start:decrement {
+  display: none;
+}
+
+/* Hide extra down button */
+::-webkit-scrollbar-button:end:increment {
+  display: none;
+}
+
+/* Horizontal scrollbar buttons */
+
+/* Hide extra left button */
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  display: none;
+}
+
+/* Hide extra right button */
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none;
+}
+
+/* Reverse button actions */
+/* When clicking the up button, it should go down */
+::-webkit-scrollbar-button:start:decrement {
+  background-image: url('scrollbar/scroll-arrow-down.svg');
+}
+
+/* When clicking the down button, it should go up */
+::-webkit-scrollbar-button:end:increment {
+  background-image: url('scrollbar/scroll-arrow-up.svg');
+}

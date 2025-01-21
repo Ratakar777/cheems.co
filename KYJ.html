@@ -1,0 +1,479 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Jeet - Pump Your Cheems Bag!</title>
+    <link rel="stylesheet" href="css2?family=Lilita+One&display=swap">
+    <style>
+        body {
+            font-family: 'Lilita One', cursive, sans-serif;
+            background-color: #fffbcc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: 5px dashed #ff6600;
+        }
+
+        .header,
+        .footer {
+            background-color: #ffcc00;
+            padding: 20px;
+            border: 5px solid #ff9900;
+            margin: 20px 0;
+        }
+
+        .header h1,
+        .footer p {
+            color: #cc0033;
+            font-size: 3em;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.5em;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff0066;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 3px solid #cc0033;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #cc0033;
+            transform: scale(1.1);
+        }
+
+        .content {
+            padding: 20px;
+            text-align: left;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .content h2 {
+            color: #ff6600;
+            font-size: 2.5em;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .content p {
+            margin: 10px 0;
+        }
+
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content ul li {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .arrow {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 2em;
+            color: #ff0066;
+            transform: rotate(90deg);
+        }
+
+        .highlight {
+            background-color: #ffff66;
+            padding: 5px;
+            border-radius: 5px;
+            border: 2px solid #ffcc00;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+        }
+
+        .testimonial-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .testimonial-carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            box-sizing: border-box;
+            background-color: #ffeb3b;
+            padding: 15px;
+            border: 2px dashed #ff9800;
+            text-align: center;
+        }
+
+        .testimonial img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .testimonial .rating {
+            font-size: 1.5em;
+            color: #ff9800;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .carousel-control {
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+        .complex-bg {
+            background: linear-gradient(135deg, #ffcc00 25%, #ff6600 75%);
+            border: 3px solid #ff9900;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .highlighted-text {
+            background-color: #ffeb3b;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .scarcity {
+            font-size: 1.5em;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        #countdown {
+            font-size: 2em;
+            color: #ff0000;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 18px;
+            height: 16px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background:
+                url('scrollbar/scroll-thumb.svg') no-repeat center center / 80%,
+                linear-gradient(#bcd1f8, #bcd1f8);
+            border-radius: 4px;
+            border: 2px solid transparent;
+            background-clip: content-box, padding-box;
+            margin-left: -2px;
+        }
+
+        ::-webkit-scrollbar-thumb:horizontal {
+            background:
+                url('scrollbar/scroll-thumb-horizontal.svg') no-repeat center center / 80%,
+                linear-gradient(#bcd1f8, #bcd1f8);
+            border-radius: 4px;
+            border: 2px solid transparent;
+            background-clip: content-box, padding-box;
+            margin-left: -2px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-button {
+            background-color: #d4d4d4;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-button:start:decrement {
+            background-image: url('scrollbar/scroll-arrow-up.svg');
+            margin-bottom: -2px;
+            margin-left: -2px;
+        }
+
+        ::-webkit-scrollbar-button:end:increment {
+            background-image: url('scrollbar/scroll-arrow-down.svg');
+            margin-top: -2px;
+            margin-left: -2px;
+        }
+
+        ::-webkit-scrollbar-button:horizontal:start:decrement {
+            background-image: url('scrollbar/scroll-arrow-left.svg');
+            margin-right: -2px;
+            margin-top: -2px;
+        }
+
+        ::-webkit-scrollbar-button:horizontal:end:increment {
+            background-image: url('scrollbar/scroll-arrow-right.svg');
+            margin-left: -2px;
+            margin-top: -2px;
+        }
+
+        @media (max-width: 600px) {
+            .button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <script src="npm/chart.js"></script>
+    <script>
+        // Countdown Timer
+        function startCountdown(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        // Carousel Functionality
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.testimonial');
+            const totalSlides = slides.length;
+
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const carouselInner = document.querySelector('.testimonial-carousel-inner');
+            const slideWidth = slides[0].clientWidth;
+            carouselInner.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        window.onload = function () {
+            var tenMinutes = 60 * 10,
+                display = document.querySelector('#countdown');
+            startCountdown(tenMinutes, display);
+            showSlide(currentSlide);
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Adopt Your Own Jeet Today and Become a Crypto Millionaire! 🚀</h1>
+            <p class="scarcity">Only 50 Jeets Left! Hurry Up!</p>
+            <p>Time Remaining: <span id="countdown">10:00</span></p>
+            <p>pump $cheems to $1 and and save some jeets from the street! 🌟</p>
+        </div>
+        <div class="content">
+            <div class="section">
+                <h2>Wtf is a jeet? 🤔</h2>
+                <p>A "Jeet" is a curious character from third-world countries, where earning a single Cheems token is a
+                    big deal. Known for their incredibly cheap labor, Jeets are hilariously bad at English and even
+                    worse at navigating crypto Twitter. They are well-known in the crypto world for "Jeeting," which
+                    involves selling their crypto as soon as they make a $1 profit.</p>
+                <div class="testimonial-carousel">
+                    <div class="testimonial-carousel-inner">
+                        <div class="testimonial">
+                            <img src="main-qimg-e79d0c06750c81b7ec6b8347f940f44b-lq" alt="Funny Indonesian">
+                            <p><strong>The Jeets Protocol is feeding my whole family!</strong></p>
+                            <p class="rating">★★★★★</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="images?q=tbn:ANd9GcS1F2WXwof_QGbf7_jZ9GEzWid-cC08W8yP5nANqJ8lJAk9XU7Qd32X4kxTAo2jUeiaWG4&usqp=CAU" alt="Fake User 1">
+                            <p><strong>The Jeets Protocol made me rich overnight!</strong></p>
+                            <p class="rating">★★★★★</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="b/close-up-hairless-mixed-breed-dog-mix-french-bulldog-chinese-crested-dog-29493752.jpg" alt="Fake User 2">
+                            <p><strong>Thanks to Jeets, I quit my job and travel the world!</strong></p>
+                            <p class="rating">★★★★★</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="media/FIRaVCRXwAQmvIx.jpglarge" alt="Fake User 3">
+                            <p><strong>My investment grew 10x in just a week!</strong></p>
+                            <p class="rating">★★★★★</p>
+                        </div>
+                        <div class="testimonial">
+                            <img src="images-1?q=tbn:ANd9GcRHEMERLotpBt9buY5OFK9Iu17UKhbQ_u-vN1V2czS-gA&s" alt="Fake User 4">
+                            <p><strong>Jeets are the best thing that happened to my crypto portfolio!</strong></p>
+                            <p class="rating">★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control" onclick="prevSlide()">&#9664;</button>
+                        <button class="carousel-control" onclick="nextSlide()">&#9654;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Why would I adopt a jeet? 🤷‍♂️</h2>
+                <p>Adopting a Jeet can be a game-changer. These quirky characters bring a chaotic energy that's both
+                    amusing and effective in the crypto world. Since they are incredibly cheap to employ (only 1 Cheems
+                    per day), they are the perfect workforce to flood social media with content. However, their efforts
+                    need to be guided and directed to be effective. As someone who adopts Jeets, known as a Jeet Master,
+                    you can leverage your creativity and humor to harness an army of Jeets to boost engagement on your
+                    own tweets and promote Cheems on Twitter. By guiding them, you transform their raw efforts into a
+                    powerful promotional force, driving up the visibility and value of Cheems while creating a unique,
+                    lively online presence.</p>
+            </div>
+            <div class="section">
+                <h2>How does that work? 🛠️</h2>
+                <canvas id="toxicityChart" width="400" height="200"></canvas>
+                <p><strong>Leveraging Toxicity to Boost Engagement on Twitter:</strong></p>
+                <p style="color: red; font-weight: 400;"><em>Note: Being toxic doesn't mean insulting people. It mean
+                        spreading fake news, trolling, confusing people, while being funny.</em></p>
+                <p>Research in social psychology suggests that negative information has a more substantial impact on
+                    human memory and perception than positive or neutral information. This is known as the negativity
+                    bias. Toxic comments are more likely to engage users and remain in their memory, drawing attention
+                    in ways that positive shilling cannot match.</p>
+                <p>On Twitter, this effect is particularly pronounced. Toxic tweets often receive more replies,
+                    retweets, and likes than positive or neutral ones because they provoke strong emotional reactions.
+                    This heightened engagement increases the visibility of these tweets due to Twitter’s algorithm,
+                    which prioritizes content.</p>
+            </div>
+            <div class="section">
+                <p><strong>Why Toxicity Works:</strong></p>
+                <ul>
+                    <li><span class="arrow">➡️</span><strong>Emotional Response:</strong> Negative comments evoke strong
+                        emotions such as anger or amusement, prompting users to engage more by replying, liking, or
+                        retweeting.</li>
+                    <li><span class="arrow">➡️</span><strong>Viral Potential:</strong> Controversial tweets are more
+                        likely to go viral as they attract attention and provoke discussions, spreading rapidly across
+                        the platform.</li>
+                    <li><span class="arrow">➡️</span><strong>Algorithm Boost:</strong> Twitter’s algorithm favors tweets
+                        with high engagement, pushing them to more users and increasing their reach.</li>
+                </ul>
+                <p>By strategically deploying Jeets to post provocative and controversial content, you can harness these
+                    dynamics to boost engagement on your own tweets and promote Cheems on Twitter. This approach ensures
+                    that Cheems stays in the spotlight, driving constant discussion and attention. Additionally, each
+                    Jeet comes with their own Cheems profile picture, ensuring that anything they say subtly promotes
+                    Cheems, putting the spotlight on our beloved dog in a soft shilling way, giving you the possibility
+                    to create an army of Cheems promoters.</p>
+            </div>
+            <div class="section complex-bg">
+                <h2>The Jeets Protocol 📜</h2>
+                <p>Powered by a decentralized smart contract called The Jeets Protocol, this system connects Jeet
+                    Masters with their Jeets through a private encrypted chat. The protocol guarantees anonymity for all
+                    Jeets, ensuring their identity remains hidden while allowing effective communication. Jeet Masters
+                    can rate their Jeets and provide feedback on their tweets for continuous improvement.</p>
+                <p>Once you pass the Jeet Master test, you receive a SoulBound Master NFT. This NFT grants you the right
+                    to hold Jeet NFTs, each representing the ownership of one Jeet. This system ensures stability and
+                    reliability, providing a robust economic foundation for the Jeets community.</p>
+                <p>A Jeet Master guides the Jeets, providing direction and ensuring their promotional efforts are
+                    strategic and impactful. Anyone can become a Jeet Master, as long as they are a true Cheems
+                    believer. The Jeet NFT supply is currently limited, restricting the number of Jeet Masters possible,
+                    but it will increase over time.</p>
+                <p>By leveraging the Jeets Protocol, which taps into the core of the attention economy through strategic
+                    negativity, Cheems stands to gain unparalleled visibility and traction on Twitter. This innovative
+                    approach, rooted in leveraging socio-economic disparities and the visceral impact of toxic comments,
+                    sets Cheems apart from other meme coins and elevates its status in the market.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Click here to sign up as a Jeet master:</p>
+            <a href="JeetMaster.html" class="button">👉 Adopt a Jeet Now 👈</a>
+        </div>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('toxicityChart').getContext('2d');
+        var toxicityChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Low', 'Medium', 'High', 'Very High'],
+                datasets: [{
+                    label: 'Engagement',
+                    data: [10, 30, 50, 80],
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderWidth: 3,
+                    lineTension: 0.4
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Engagement (Likes, Retweets, Replies)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Toxicity Level'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

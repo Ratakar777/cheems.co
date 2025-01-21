@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Donut Chart</title>
+  <link rel="stylesheet" href="tokenomics.css">
+  <script src="tokenomics.js" defer></script>
+</head>
+
+<body>
+  <!-- Adding Tokenomics.gif at the top as a title -->
+  <div class="header">
+    <img src="pictures/Tokenomics.gif" alt="Tokenomics" style="width: 100%; display: block;">
+    <p class="contract-label">Contract Address:</p>
+    <p class="contract-address">3FoUAsGDbvTD6YZ4wVKJgTB76onJUKz7GPEBNiR5b8wc</p>
+  </div>
+
+  <div class="chart-container">
+    <div class="donut-chart">
+      <img src="pictures/10269.png" alt="Cheems Logo" class="donut-logo">
+    </div>
+    <div class="legend">
+      <div>
+        <div class="legend-color green"></div>85% Airdrop
+      </div>
+      <div>
+        <div class="legend-color red"></div>7% Core Team
+      </div>
+      <div>
+        <div class="legend-color yellow"></div>4% Marketing
+      </div>
+      <div>
+        <div class="legend-color blue"></div>4% Liquidity
+      </div>
+    </div>
+  </div>
+
+  <div class="circulation-info">
+    <p><strong>Information</strong></p>
+    <ul>
+      <li><strong>Launch Date:</strong> May 12, 2021</li>
+      <li><strong>Original Total Supply:</strong> 7,000,000,000 CHEEMS tokens</li>
+      <li><strong>Tokens Burned:</strong> 4,557,946,992.61 CHEEMS tokens</li>
+      <li><strong>Current Total Supply:</strong> 2,442,053,007.39 CHEEMS tokens</li>
+      <li><strong>Circulating Supply:</strong> 2,389,036,004.95 CHEEMS tokens</li>
+    </ul>
+    <p>See tx of creation here: <a
+        href="https://solscan.io/tx/3ru67c7HeATiA2RxNavGA8J6pfu4ghYEb3RSHMdVyWYoeonu52NbsdWNAUKAHfj7XWukWU2VmHMAKVhffu6wVqLM"
+        target="_blank" rel="noopener noreferrer">Transaction Details</a></p>
+  </div>
+
+  <button id="airdropButton">Airdrop Distribution</button>
+  <div id="airdropText" class="detailsText">
+    <p><strong>Airdropped to the Solana Community:</strong></p>
+    <ul>
+      <li>First Airdrop (Early Solana Members): 4,596 members received a total of 369,685.767 CHEEMS tokens.</li>
+      <li>Second Airdrop (Later Participants): 2,025 members received a total of 185,000 CHEEMS tokens.</li>
+    </ul>
+    <p><strong>Total Airdropped:</strong> 2,073,700,785.132 CHEEMS tokens (84.92% of the total supply).</p>
+  </div>
+
+  <button id="airdropCriteriaButton">Airdrop Criteria</button>
+  <div id="airdropCriteriaText" class="detailsText">
+    <h3>First Airdrop</h3>
+    <p>Participants were required to:</p>
+    <ul>
+      <li>Engage with the initial tweet by liking, retweeting, and commenting.</li>
+      <li>Follow the CHEEMS official Twitter account.</li>
+      <li>Join the official Discord server.</li>
+    </ul>
+    <p><strong>Authenticity and Bot Prevention Checks (undisclosed):</strong></p>
+    <ul>
+      <li>Twitter Account must be older than 3 months, have a profile picture, more than 10 followers, and more than 50
+        tweets.</li>
+      <li>Discord Account must be older than 3 months and have a profile picture.</li>
+    </ul>
+
+    <h3>Second Airdrop</h3>
+    <p>Participants were required to:</p>
+    <ul>
+      <li>Engage with the initial tweet by liking, retweeting, and commenting.</li>
+      <li>Follow the CHEEMS official Twitter account.</li>
+      <li>Join the official Discord server.</li>
+      <li>Make a genuine post on Reddit promoting CHEEMS.</li>
+      <li>Make a genuine post on 4chan promoting CHEEMS.</li>
+      <li>Post a meme related to CHEEMS on Twitter.</li>
+    </ul>
+    <p><strong>Authenticity and Bot Prevention Checks (undisclosed):</strong></p>
+    <ul>
+      <li>Twitter Account must be older than 3 months, have a profile picture, more than 10 followers, and more than 50
+        tweets.</li>
+      <li>Discord Account must be older than 3 months and have a profile picture.</li>
+    </ul>
+  </div>
+
+  <button id="remainingDistButton">Remaining Distribution</button>
+  <div id="remainingDistText" class="detailsText">
+    <p><strong>Remaining Distribution:</strong></p>
+    <ul>
+      <li>Liquidity Provision (LP): 92,088,055.565 CHEEMS tokens (3.77%).</li>
+      <li>Marketing: 92,088,055.565 CHEEMS tokens (3.77%).</li>
+      <li>Original Contributors: 184,176,111.129 CHEEMS tokens (7.54%).</li>
+    </ul>
+  </div>
+
+  <button id="tokensFrozenButton">Tokens Frozen Post-Hack Incident</button>
+  <div id="tokensFrozenText" class="detailsText">
+    <p><strong>Tokens Frozen Post-Hack Incident:</strong></p>
+    <ul>
+      <li>Following a wallet security breach affecting the Solana network's Slope wallets, 53,016,002.44 CHEEMS tokens
+        were frozen.</li>
+      <li>This was not a hack targeting CHEEMS specifically, but rather a broader issue with the Solana ecosystem.</li>
+      <li>The freeze was implemented as a precautionary measure to safeguard community funds.</li>
+      <li>The freeze authority has since been renounced by the CHEEMS team after addressing the security concerns.</li>
+      <li>This action was taken to enhance the decentralization of the token and empower the community with greater
+        control over its assets.</li>
+    </ul>
+    <p><strong>So the real circulating supply is:</strong> 2,389,036,004.95 CHEEMS</p>
+  </div>
+
+</body>
+
+</html>

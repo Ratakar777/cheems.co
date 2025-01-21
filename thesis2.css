@@ -1,0 +1,134 @@
+/* Global styling for the body to ensure full background coverage */
+body {
+  background-color: #1e1e1e;
+  color: #c7c7c7;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Basic styling for the text container */
+.text-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: justify;
+}
+
+/* General styling for images within the text container */
+.cheems-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  border: 1px solid #555;
+}
+
+/* Specific size adjustments for individual images using unique class names */
+.cheems-balltze {
+  max-width: 350px;
+}
+
+.cheems-swole-doge {
+  max-width: 300px;
+}
+
+.cheems-bonk {
+  max-width: 150px;
+}
+
+.cheems-digital-art {
+  max-width: 200px;
+}
+
+.cheems-styled-art {
+  max-width: 250px;
+}
+
+/* Enhanced styles for headlines and blockquotes */
+h1,
+h2 {
+  color: #ffffff;
+}
+
+blockquote {
+  font-style: italic;
+  background-color: #333333;
+  border-left: 10px solid #555555;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+
+/* Styles for links to maintain the same color in all states */
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #0096FF;
+  text-decoration: none;
+}
+
+/* Scrollbar sizing */
+::-webkit-scrollbar {
+  width: 18px;
+  height: 16px;
+}
+
+/* Thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background:
+    url('scrollbar/scroll-thumb.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  margin-left: -2px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background:
+    url('scrollbar/scroll-thumb-horizontal.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  margin-left: -2px;
+}
+
+/* Track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+/* Buttons (arrows) */
+::-webkit-scrollbar-button {
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+}
+
+/* Adjustments for up and down buttons */
+::-webkit-scrollbar-button:start:decrement {
+  background-image: url('scrollbar/scroll-arrow-up.svg');
+  margin-bottom: -2px;
+  margin-left: -2px;
+}
+
+::-webkit-scrollbar-button:end:increment {
+  background-image: url('scrollbar/scroll-arrow-down.svg');
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+/* Adjustments for left and right buttons */
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  background-image: url('scrollbar/scroll-arrow-left.svg');
+  margin-right: -2px;
+  margin-top: -2px;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  background-image: url('scrollbar/scroll-arrow-right.svg');
+  margin-left: -2px;
+  margin-top: -2px;
+}

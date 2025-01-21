@@ -1,0 +1,139 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #E0E0E0;
+  background-color: #1e1e1e;
+}
+
+/* Styling for the video container */
+.video-container {
+  padding: 20px;
+  text-align: center;
+  /* Center content for better aesthetics */
+}
+
+/* Styling for the video introduction text */
+.video-intro {
+  color: #E0E0E0;
+  font-size: 16px;
+  /* Smaller font size for the introductory text */
+  margin-bottom: 20px;
+  /* Space between the intro text and the video */
+}
+
+/* Styling for the video element itself */
+video {
+  width: calc(100% - 40px);
+  /* Adjust width to take padding into account */
+  height: auto;
+  /* Maintain aspect ratio */
+  display: block;
+  /* Removes bottom space/margin */
+  margin: 0 auto;
+  /* Centers the video */
+}
+
+/* Styling for the main story content area */
+.story-content {
+  padding: 20px;
+  text-align: justify;
+  background-color: #333333;
+  border-radius: 8px;
+  margin: 20px auto;
+  /* Center the story content and add margin */
+  max-width: 800px;
+  /* Max width for the story content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for hyperlinks to ensure they are always the specified blue */
+a {
+  color: #1DA1F2;
+  /* Consistent blue color for all links */
+  text-decoration: none;
+  /* Removes underline */
+}
+
+a:hover {
+  text-decoration: underline;
+  /* Adds underline on hover */
+}
+
+
+/* DICKDDJWDJWDJDWJDWJDWJWD */
+
+/* Scrollbar sizing */
+::-webkit-scrollbar {
+  width: 18px;
+  height: 16px;
+}
+
+/* Thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background:
+    url('scrollbar/scroll-thumb.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the thumb slightly to the left */
+  margin-left: -2px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background:
+    url('scrollbar/scroll-thumb-horizontal.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the horizontal thumb slightly to the left if needed */
+  margin-left: -2px;
+}
+
+/* Track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+/* Buttons (arrows) */
+::-webkit-scrollbar-button {
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+}
+
+/* Adjustments for up and down buttons */
+::-webkit-scrollbar-button:start:decrement {
+  background-image: url('scrollbar/scroll-arrow-up.svg');
+  /* Move the up button slightly up and to the left */
+  margin-bottom: -2px;
+  margin-left: -2px;
+}
+
+::-webkit-scrollbar-button:end:increment {
+  background-image: url('scrollbar/scroll-arrow-down.svg');
+  /* Move the down button slightly down and to the left */
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+/* Adjustments for left and right buttons */
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  background-image: url('scrollbar/scroll-arrow-left.svg');
+  /* Move the left button slightly to the left and up */
+  margin-right: -2px;
+  margin-top: -2px;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  background-image: url('scrollbar/scroll-arrow-right.svg');
+  /* Move the right button slightly to the right and up */
+  margin-left: -2px;
+  margin-top: -2px;
+}

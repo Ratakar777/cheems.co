@@ -1,0 +1,263 @@
+/* Global settings for the body to ensure consistent font, padding, and color */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+  /* Dark background for better contrast with white text */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  /* Full height to ensure footer can stick at the bottom if needed */
+}
+
+/* Container for the Back to Main Menu button */
+.button-container {
+  width: 100%;
+  padding: 10px 20px;
+  /* Spacing around the button */
+  box-sizing: border-box;
+  /* Ensures padding is included in width */
+  text-align: left;
+  /* Aligns the button to the left */
+}
+
+/* Back button styling */
+button {
+  background-color: #444;
+  /* Dark gray background for the button */
+  color: white;
+  /* Text color for the button */
+  border: none;
+  /* Removes the border */
+  padding: 10px 20px;
+  /* Padding inside the button for space around text */
+  border-radius: 5px;
+  /* Rounded corners for the button */
+  font-size: 16px;
+  /* Text size */
+  cursor: pointer;
+  /* Changes cursor to pointer to indicate it's clickable */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Smooth transition for hover effects */
+  display: inline-flex;
+  /* Ensures the arrow and text are aligned nicely */
+  align-items: center;
+  /* Aligns the arrow and text vertically */
+}
+
+/* Adds an arrow before the button text */
+button::before {
+  content: "←";
+  /* Left arrow symbol */
+  margin-right: 10px;
+  /* Space between the arrow and the text */
+  font-size: 20px;
+  /* Slightly larger font size for the arrow for emphasis */
+}
+
+/* Hover effect for the button */
+button:hover {
+  background-color: #555;
+  /* Slightly lighter gray when hovered */
+  transform: scale(1.05);
+  /* Slightly scale up the button */
+}
+
+/* General content styling - adjusts text alignment and spacing */
+.content,
+.image-container {
+  width: 80%;
+  /* Sets the width of the content area */
+  text-align: justify;
+  /* Justifies text for better readability */
+  margin-bottom: 20px;
+  /* Space below each section for separation */
+}
+
+/* Specific content styling - adjusts font size and spacing at the top */
+.content {
+  font-size: 16px;
+  line-height: 1.6;
+  /* Line height for better readability */
+  padding-top: 30px;
+  /* Top padding to distance content from the button or header */
+}
+
+/* Styling for the image container to layout images */
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  /* Distributes space around items */
+  flex-wrap: wrap;
+  /* Allows items to wrap in container */
+}
+
+/* Styling for each image block (square) */
+.square {
+  flex: 1 1 150px;
+  /* Flex basis with auto-growing and shrinking */
+  max-width: 150px;
+  /* Maximum width */
+  height: 150px;
+  /* Fixed height to maintain aspect ratio */
+  margin: 10px;
+  /* Margin around each square */
+  overflow: hidden;
+  /* Hides parts of the image that overflow */
+  position: relative;
+  /* Enables absolute positioning for child elements */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transitions for hover */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  /* Shadow for depth */
+}
+
+/* Styling for links within each square */
+.square a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* Makes the link block to fill the square */
+  text-decoration: none;
+  /* Removes underline from links */
+  color: inherit;
+  /* Inherits text color from parent */
+}
+
+/* Ensures images fill the square and are covered nicely */
+.square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image covers the area */
+}
+
+/* Hover effects for each square */
+.square:hover {
+  transform: translateY(-5px);
+  /* Moves the square up */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  /* Stronger shadow for lifting effect */
+}
+
+/* Title styling inside each square */
+.title {
+  position: absolute;
+  bottom: 0;
+  /* Aligns title at the bottom */
+  left: 0;
+  /* Aligns title to the left */
+  width: 100%;
+  /* Full width */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black background */
+  color: white;
+  /* White text */
+  text-align: center;
+  /* Centers text */
+  padding: 5px 10px;
+  /* Padding inside the title */
+  box-sizing: border-box;
+  /* Ensures padding is included in height */
+  font-size: 14px;
+  /* Font size for title */
+}
+
+
+
+/* DICKDDJWDJWDJDWJDWJDWJWD */
+
+
+/* Scrollbar sizing */
+::-webkit-scrollbar {
+  width: 18px;
+  height: 16px;
+}
+
+/* Thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background:
+    url('scrollbar/scroll-thumb.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  /* Adjust the rounded corners of the rectangle */
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the thumb slightly to the left */
+  margin-left: -2px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background:
+    url('scrollbar/scroll-thumb-horizontal.svg') no-repeat center center / 80%,
+    linear-gradient(#bcd1f8, #bcd1f8);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box, padding-box;
+  /* Move the horizontal thumb slightly to the left if needed */
+  margin-left: -2px;
+}
+
+/* Track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+  /* Rounded corners for the track */
+}
+
+/* Up button */
+::-webkit-scrollbar-button:start {
+  background-image: url('scrollbar/scroll-arrow-up.svg');
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  /* Rounded corners for the button */
+}
+
+/* Down button */
+::-webkit-scrollbar-button:end {
+  background-image: url('scrollbar/scroll-arrow-down.svg');
+  background-color: #d4d4d4;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  /* Rounded corners for the button */
+}
+
+/* Hide extra up button */
+::-webkit-scrollbar-button:start:decrement {
+  display: none;
+}
+
+/* Hide extra down button */
+::-webkit-scrollbar-button:end:increment {
+  display: none;
+}
+
+/* Horizontal scrollbar buttons */
+
+/* Hide extra left button */
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  display: none;
+}
+
+/* Hide extra right button */
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none;
+}
+
+/* Reverse button actions */
+/* When clicking the up button, it should go down */
+::-webkit-scrollbar-button:start:decrement {
+  background-image: url('scrollbar/scroll-arrow-down.svg');
+}
+
+/* When clicking the down button, it should go up */
+::-webkit-scrollbar-button:end:increment {
+  background-image: url('scrollbar/scroll-arrow-up.svg');
+}
